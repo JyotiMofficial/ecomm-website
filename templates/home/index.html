@@ -1,0 +1,108 @@
+{% extends "base/base.html"%}
+
+{%  block start %}
+
+
+{% load static %}
+
+
+
+
+<div class="container mt-5 pt-5" style="width: 800%";>
+    
+ 
+
+    
+    <div class="row">
+        
+        
+        
+
+        {% for product in products %}
+        <div class="col-md-3">
+            <figure class="card card-product-grid">
+                <div class="img-wrap"> <img src="/media/{{product.product_images.first.image}}"> </div>
+                <figcaption class="info-wrap border-top">
+                    <a href="{% url 'get_product' product.slug %}" class="title">
+                        <b>{{product.product_name}}</b></a>
+                    <div class="price mt-2">₹{{product.price}}.00</div> <!-- price-wrap.// -->
+                
+                </figcaption>
+            </figure> <!-- card // -->
+        </div> <!-- col.// -->
+
+        {% endfor %}
+      
+        
+       
+    </div>
+
+
+    </div>  
+</div>
+    
+    <!DOCTYPE html>
+    
+    <hr class="small">
+</div>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
+   
+
+
+    </head>
+    <body>
+    <footer class="site-footer">
+    <div class="container">
+    <div class="row">
+    <div class="col-sm-12 col-md-6">
+    <h6>About</h6>
+    <p class="text-justify"> just a demo Website </br>
+        designed for learning
+
+    </p>
+    </div>
+    <div class="col-6 col-md-3">
+    <h6>Categories</h6>
+    <ul class="list-menu ">
+    <li><a href="#">clothes</a></li>
+    <li><a href="#">shoes</a></li>
+    <li><a href="#">hats</a></li>
+    <li><a href="#">candles</a></li>
+    <li><a href="#">sunglasses</a></li>
+    <li><a href="#">others</a></li>
+    </ul>
+    </div>
+    <div class="col-6 col-md-3">
+    <h6>Quick Links</h6>
+    <ul class="list-menu">
+    <li><a href="#">About Us</a></li>
+    <li><a href="#">Contact Us</a></li>
+    <li><a href="#">Contribute</a></li>
+    <li><a href="#">Privacy Policy</a></li>
+    <li><a href="#">Sitemap</a></li>
+    </ul>
+   
+    </div>
+    
+    </div>
+    <div class="container">
+    <div class="row">
+    <div class="col-md-8 col-sm-6 col-12">
+        <hr class="small">
+    </div>
+    </div>
+   
+    </div>
+  
+    </footer>
+
+    </body>
+    </html>
+
+    
+
+
+{% endblock %}
